@@ -9,4 +9,4 @@ PROXY_PASS - proxy for processing php requests.
 ### How to run
 
 Run on port 8080 image, be aware first you need start proxy php container
-docker run -v /var/www/html/docker_learn/apache2_mpm:/var/www/localhost/htdocs -d -p 8002:8080  -e APACHE_LISTEN_PORT="8080" -e PROXY_PASS="fcgi://php-fpm:8000 /var/www/localhost/htdocs" --name apache2_mpm_container --link php-proxy-container lordius/alpine-apache:apache-2.4.23-mpm 
+docker run -v /hostDir:/var/www/localhost/htdocs -d -p 8002:8080  -e APACHE_LISTEN_PORT="8080" -e PROXY_PASS="fcgi://php-fpm:8000 /var/www/localhost/htdocs" --name apache2_mpm_container --link php-proxy-container lordius/alpine-apache:apache-2.4.23-mpm 
