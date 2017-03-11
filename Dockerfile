@@ -2,7 +2,7 @@
 FROM alpine:3.4
 MAINTAINER lordius<andriy.khomych@gmail.com>
 #Listen Port
-ENV APACHE_LISTEN_PORT 8080
+ENV APACHE_LISTEN_PORT 80
 ENV PROXY_PASS fcgi://php-fpm:8000 /var/www/localhost/htdocs
 
 # Install apache2
@@ -33,4 +33,4 @@ WORKDIR /var/www/localhost/htdocs
 VOLUME ["/var/www/localhost/htdocs"]  
 RUN chmod +x /var/www/localhost/htdocs
 ENTRYPOINT ["docker-entrypoint.sh"]
-EXPOSE 8080
+EXPOSE 80
