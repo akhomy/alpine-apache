@@ -25,6 +25,7 @@ ADD configs/apache2 /etc/apache2
 RUN  rm -rf /var/lib/apt/lists/* && \
      rm -rf /var/cache/apk/* && \
      rm -rf /var/www/localhost/htdocs/*
+     
 #Create /temp_configs_dir for use
 RUN mkdir /temp_configs_dir && chmod -R +x /temp_configs_dir && cd /temp_configs_dir
   
