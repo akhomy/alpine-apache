@@ -5,6 +5,8 @@ Apache2 MPM image based on Alpine linux.
 
 APACHE_LISTEN_PORT - port on which apache will be listen inside container
 PROXY_PASS - proxy for processing php requests.
+DOCUMENT_ROOT - DocumentRoot option in httpd.conf
+DIRECTORY - <Directory option value in httpd.conf
 
 ### How to run
 
