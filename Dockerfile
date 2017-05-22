@@ -1,10 +1,12 @@
 #lordius/alpine-apache:apache-2.4.23-mpm
 FROM alpine:3.4
 MAINTAINER lordius<andriy.khomych@gmail.com>
+RUN apk --no-cache update
 
 # Install apache2
-RUN apk add --no-cache apache2 \
-                       apache2-proxy 
+RUN apk add --no-cache ca-certificates openssl openssl-dev \
+                       pcre-dev apache2 apache2-proxy apache2-ssl
+
 RUN mkdir -p /run/apache2
 
 #Configure apache2 for work in mpm mode, enable mod rewrite by copy our config files

@@ -22,6 +22,7 @@ if [ -z "$USE_ONLY_CONFIGS" ]; then
 
     if [ -n "$DOCUMENT_ROOT" ]; then
         sed -i 's@^DocumentRoot "/var/www/localhost/htdocs".*@'"DocumentRoot \"${DOCUMENT_ROOT}\""'@' /etc/apache2/httpd.conf
+        sed -i 's@^DocumentRoot "/var/www/localhost/htdocs".*@'"DocumentRoot \"${DOCUMENT_ROOT}\""'@' /etc/apache2/conf.d/ssl.conf
     fi
 
     if [ -n "$DIRECTORY" ]; then
