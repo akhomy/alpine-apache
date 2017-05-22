@@ -12,7 +12,7 @@ RUN mkdir -p /run/apache2
 #Configure apache2 for work in mpm mode, enable mod rewrite by copy our config files
 RUN rm -R /etc/apache2/*
 ADD configs/apache2 /etc/apache2
-    
+RUN cp /etc/ssl/apache2/server.pem /etc/ssl/apache2/server-ca.pem
 #Clean trash
 RUN  rm -rf /var/lib/apt/lists/* && \
      rm -rf /var/cache/apk/* && \
