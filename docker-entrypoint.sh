@@ -20,6 +20,12 @@ if [ -z "$USE_ONLY_CONFIGS" ]; then
         sed -i 's@^Listen.*@'"Listen ${APACHE_LISTEN_PORT}"'@' /etc/apache2/httpd.conf
     fi
 
+    if [ -n "$APACHE_LISTEN_SSL_PORT" ]; then
+        sed -i 's@^Listen.*@'"Listen ${APACHE_LISTEN_SSL_PORT}"'@' /etc/apache2/conf.d/ssl.conf
+        sed -i 's@^<VirtualHost _default_:443>.*@'"<VirtualHost default_:\"${APACHE_LISTEN_SSL_PORT}\">"'@' /etc/apache2/conf.d/ssl.conf
+        sed -i 's@^ServerName.*@'"ServerName localhost:${APACHE_LISTEN_SSL_PORT}"'@' /etc/apache2/conf.d/ssl.conf
+    fi
+
     if [ -n "$DOCUMENT_ROOT" ]; then
         sed -i 's@^DocumentRoot "/var/www/localhost/htdocs".*@'"DocumentRoot \"${DOCUMENT_ROOT}\""'@' /etc/apache2/httpd.conf
         sed -i 's@^DocumentRoot "/var/www/localhost/htdocs".*@'"DocumentRoot \"${DOCUMENT_ROOT}\""'@' /etc/apache2/conf.d/ssl.conf
