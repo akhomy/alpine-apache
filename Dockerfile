@@ -1,4 +1,4 @@
-#lordius/alpine-apache:apache-2.4.23-mpm
+#lordius/alpine-apache:apache-2.4.*-mpm
 FROM alpine:3.4
 MAINTAINER lordius<andriy.khomych@gmail.com>
 RUN apk --no-cache update
