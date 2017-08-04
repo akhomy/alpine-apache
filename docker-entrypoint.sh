@@ -35,6 +35,10 @@ if [ -z "$USE_ONLY_CONFIGS" ]; then
         sed -i 's@^<Directory "/var/www/localhost/htdocs">.*@'"<Directory \"${DIRECTORY}\">"'@' /etc/apache2/httpd.conf
     fi
 
+    if [ -n "$APACHE_TIMEOUT" ]; then
+        sed -i 's@^Timeout.*@'"Timeout ${APACHE_TIMEOUT}"'@' /etc/apache2/conf.d/default.conf
+    fi
+
 fi
 
 httpd -D FOREGROUND
