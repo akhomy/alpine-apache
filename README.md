@@ -12,6 +12,7 @@
 <li>APACHE_LISTEN_SSL_PORT - <code>/etc/apache2/conf.d/ssl.conf | /etc/apache2/conf.d/ssl.conf | /etc/apache2/conf.d/ssl.conf Listen | VirtualHost | ServerName</code></li>
 <li>DOCUMENT_ROOT - <code>/etc/apache2/httpd.conf | /etc/apache2/conf.d/ssl.conf DocumentRoot</code></li>
 <li>DIRECTORY - <code>/etc/apache2/httpd.conf Directory</code></li>
+<li>APACHE_TIMEOUT - <code>/etc/apache2/conf.d/default.conf Timeout</code></li>
 </ul>
 
 ### How to run
