@@ -11,7 +11,7 @@ fi
 rm -f /usr/local/apache2/logs/httpd.pid
 
 if [ -z "$USE_ONLY_CONFIGS" ]; then
-    
+
     if [ -n "$PROXY_PASS" ]; then
         sed -i 's@^    ProxyPass.*@'"    ProxyPass ${PROXY_PASS}/\$1"'@' /etc/apache2/httpd.conf
     fi

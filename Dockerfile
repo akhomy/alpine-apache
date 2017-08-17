@@ -1,11 +1,11 @@
-#lordius/alpine-apache:apache-2.4.*-mpm
+#lordius/alpine-apache:apache
 FROM alpine:3.4
 MAINTAINER lordius<andriy.khomych@gmail.com>
-RUN apk --no-cache update
+RUN apk no-cache update
 
 # Install apache2
 RUN apk add --no-cache ca-certificates openssl openssl-dev \
-                       pcre-dev apache2 apache2-proxy apache2-ssl
+                  pcre-dev apache2 apache2-proxy apache2-ssl
 
 RUN mkdir -p /run/apache2
 
@@ -17,15 +17,15 @@ RUN cp /etc/ssl/apache2/server.pem /etc/ssl/apache2/server-ca.pem
 RUN  rm -rf /var/lib/apt/lists/* && \
      rm -rf /var/cache/apk/* && \
      rm -rf /var/www/localhost/htdocs/*
-     
+
 #Create /temp_configs_dir for use
 RUN mkdir /temp_configs_dir && chmod -R +x /temp_configs_dir && cd /temp_configs_dir
-  
+
 COPY docker-entrypoint.sh /usr/local/bin/ 
-RUN  chmod +x /usr/local/bin/docker-entrypoint.sh 
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
 #Setup workdir directory
 WORKDIR /var/www/localhost/htdocs
-VOLUME ["/var/www/localhost/htdocs"]  
+VOLUME ["/var/www/localhost/htdocs"]
 RUN chmod +x /var/www/localhost/htdocs
 ENTRYPOINT ["docker-entrypoint.sh"]
 EXPOSE 80
