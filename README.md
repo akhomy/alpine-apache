@@ -1,5 +1,5 @@
 # Apache2 (MPM) image for LAMP stack
-<p>Apache2 in MPM mode image based on Alpine Linux.</p>
+Apache2 in MPM mode image based on Alpine Linux.
 
 ## Introduction
 You could mount to `/temp_configs_dir` with your volume and use own configs. Variable **USE_ONLY_CONFIGS** - disable using the custom variables in the list below.
