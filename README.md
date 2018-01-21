@@ -1,4 +1,4 @@
-# Apache2 (MPM) image for [Docker Compose LAMP stack](https://github.com/a-kom/docker-compose-lamp)
+# Apache2 (MPM) image for Docker Compose LAMP stack.
 Apache2 in MPM mode image based on Alpine Linux.
 
 ## Include own configs
