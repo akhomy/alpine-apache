@@ -1,4 +1,4 @@
-# Apache2 (MPM) image for Docker Compose LAMP stack.
+# Apache2 (MPM) image for Docker Compose LAMP stack
 Apache2 in MPM mode image based on Alpine Linux.
 
 ## Include own configs
@@ -24,4 +24,4 @@ Run image the on port 8080, be aware first you need start proxy(in [docker-compo
 
 ## Full LAMP stack
 
-See [Docker Compose LAMP](https://github.com/a-kom/docker-compose-lamp)
+See [Docker Compose LAMP](https://github.com/a-kom/docker-compose-lamp).
