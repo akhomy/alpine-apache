@@ -6,9 +6,9 @@ You could mount to `/temp_configs_dir` with your volume and use own configs. Var
 
 ## How to run
 
-Run image the on port 8080, be aware first you need start proxy(in [docker-compose-lamp](https://github.com/a-kom/docker-compose-lamp) **PHP-FPM** container).
+Run image the on port 8080, be aware first you need start proxy(in [docker-compose-lamp](https://github.com/akhomy/docker-compose-lamp) **PHP-FPM** container).
 
-`docker run -v /hostDir:/var/www/localhost/htdocs -d -p 8002:8080  -e APACHE_LISTEN_PORT="8080" -e PROXY_PASS="fcgi://php-fpm:8000 /var/www/localhost/htdocs" --name apache2_mpm_container --link php-proxy-container lordius/alpine-apache`
+`docker run -v /hostDir:/var/www/localhost/htdocs -d -p 8002:8080  -e APACHE_LISTEN_PORT="8080" -e PROXY_PASS="fcgi://php-fpm:8000 /var/www/localhost/htdocs" --name apache2_mpm_container --link php-proxy-container akhomy/alpine-apache`
 
 ## Environment Variables
 
@@ -24,4 +24,4 @@ Run image the on port 8080, be aware first you need start proxy(in [docker-compo
 
 ## Full LAMP stack
 
-See [Docker Compose LAMP](https://github.com/a-kom/docker-compose-lamp).
+See [Docker Compose LAMP](https://github.com/akhomy/docker-compose-lamp).

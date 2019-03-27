@@ -1,4 +1,4 @@
-# lordius/alpine-apache
+# akhomy/alpine-apache
 FROM alpine:latest
 LABEL maintainer=andriy.khomych@gmail.com
 RUN apk no-cache update
@@ -21,8 +21,8 @@ RUN  rm -rf /var/lib/apt/lists/* && \
 # Create /temp_configs_dir for using.
 RUN mkdir /temp_configs_dir && chmod -R +x /temp_configs_dir && cd /temp_configs_dir
 
-COPY docker-entrypoint.sh /usr/local/bin/ 
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 # Setup workdir.
 WORKDIR /var/www/localhost/htdocs
 VOLUME ["/var/www/localhost/htdocs"]
