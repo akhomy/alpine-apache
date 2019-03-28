@@ -1,5 +1,5 @@
 # akhomy/alpine-apache
-FROM alpine:3.7
+FROM alpine:latest
 LABEL maintainer=andriy.khomych@gmail.com
 RUN apk no-cache update
 
