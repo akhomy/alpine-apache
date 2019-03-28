@@ -1,5 +1,5 @@
 # akhomy/alpine-apache
-FROM alpine:latest
+FROM alpine:3.7
 LABEL maintainer=andriy.khomych@gmail.com
 RUN apk no-cache update
 
@@ -11,7 +11,7 @@ RUN mkdir -p /run/apache2
 
 # Configure apache2 for work in mpm mode, enable mod rewrite by copy our config files.
 RUN rm -R /etc/apache2/*
-ADD configs/apache2 /etc/apache2
+COPY configs/apache2 /etc/apache2
 RUN cp /etc/ssl/apache2/server.pem /etc/ssl/apache2/server-ca.pem
 # Clean trash.
 RUN  rm -rf /var/lib/apt/lists/* && \

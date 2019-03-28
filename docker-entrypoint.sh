@@ -10,10 +10,11 @@ fi
 # Apache gets grumpy about PID files pre-existing
 rm -f /usr/local/apache2/logs/httpd.pid
 
-if [ -z "$USE_ONLY_CONFIGS" ]; then
-
+if [ "$USE_ONLY_CONFIGS" -eq "1" ]; then
+    echo $USE_ONLY_CONFIGS;
+else
     if [ -n "$PROXY_PASS" ]; then
-        sed -i 's@^    ProxyPass.*@'"    ProxyPass ${PROXY_PASS}/\$1"'@' /etc/apache2/httpd.conf
+            sed -i 's@^    ProxyPass.*@'"    ProxyPass ${PROXY_PASS}/\$1"'@' /etc/apache2/httpd.conf
     fi
 
     if [ -n "$APACHE_LISTEN_PORT" ]; then
@@ -38,7 +39,6 @@ if [ -z "$USE_ONLY_CONFIGS" ]; then
     if [ -n "$APACHE_TIMEOUT" ]; then
         sed -i 's@^Timeout.*@'"Timeout ${APACHE_TIMEOUT}"'@' /etc/apache2/conf.d/default.conf
     fi
-
 fi
 
 httpd -D FOREGROUND
