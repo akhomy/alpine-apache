@@ -1,3 +1,6 @@
+# Status
+Archived in favor of other tools.
+
 # Apache2 (MPM) image for Docker Compose LAMP stack
 Apache2 in MPM mode image based on Alpine Linux.
 
